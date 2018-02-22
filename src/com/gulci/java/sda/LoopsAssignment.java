@@ -28,7 +28,7 @@ public class LoopsAssignment {
         System.out.println();
 
         System.out.println("n times a");
-        IntStream.rangeClosed(1, n).map(num -> 'a').forEach(chr -> System.out.println((char) chr));
+        IntStream.rangeClosed(1, n).mapToObj(num -> "a").forEach(System.out::println);
         System.out.println();
 
         System.out.println("squares");
