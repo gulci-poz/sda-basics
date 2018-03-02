@@ -8,6 +8,8 @@ public class Node {
     Node leftChild;
     Node rightChild;
 
+    int level;
+
 
     public Node(int key, String name) {
         this.key = key;
@@ -16,6 +18,6 @@ public class Node {
 
     @Override
     public String toString() {
-        return key + "(" + leftChild + ", " + rightChild + ")";
+        return "|" + key + "|(" + level + ")";
     }
 }

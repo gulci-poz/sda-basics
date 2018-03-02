@@ -3,6 +3,7 @@ package com.gulci.java.sda.treeimpl.derek;
 public class BinaryTree {
 
     Node root;
+    int size;
 
 
     public Node findNode(int key) {
@@ -31,25 +32,34 @@ public class BinaryTree {
 
         if (root == null) {
             root = newNode;
+            root.level = 0;
+            size++;
         } else {
             Node focusNode = root;
             Node parent;
+            int level = 0;
 
             while (true) {
                 parent = focusNode;
 
                 if (key < focusNode.key) {
                     focusNode = focusNode.leftChild;
+                    level++;
 
                     if (focusNode == null) {
                         parent.leftChild = newNode;
+                        newNode.level = level;
+                        size++;
                         return;
                     }
                 } else {
                     focusNode = focusNode.rightChild;
+                    level++;
 
                     if (focusNode == null) {
                         parent.rightChild = newNode;
+                        newNode.level = level;
+                        size++;
                         return;
                     }
                 }
